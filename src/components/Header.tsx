@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Moon from '../assets/icon-moon.svg';
 import Sun from '../assets/icon-sun.svg';
 
 export function Header() {
   const [mode, setMode] = useState('');
+
+  useEffect(() => {
+    changeMode();
+  }, []);
 
   const changeMode = () => {
     if (
@@ -27,22 +31,17 @@ export function Header() {
         Devfinder
       </h1>
 
-      <div className="flex items-center gap-4" onClick={changeMode}>
-        {mode === 'dark' ? (
-          <>
-            <p className="text-[13px] font-bold tracking-[2.5px] text-secondary-font-grey">
-              DARK
-            </p>{' '}
-            <img src={Moon} alt="moon icon" />
-          </>
-        ) : (
-          <>
-            <p className="text-[13px] font-bold tracking-[2.5px] text-secondary-font-grey dark:text-white ">
-              LIGHT
-            </p>{' '}
-            <img src={Sun} alt="sun icon" />
-          </>
-        )}
+      <div
+        className="flex items-center gap-4 cursor-pointer"
+        onClick={changeMode}
+      >
+        <p className="text-[13px] font-bold tracking-[2.5px] text-secondary-font-grey dark:text-white ">
+          {mode === 'dark' ? 'DARK' : 'LIGHT'}
+        </p>
+        <img
+          src={mode === 'dark' ? Moon : Sun}
+          alt={mode === 'dark' ? 'Turn on dark mode' : 'Turn off dark mode'}
+        />
       </div>
     </header>
   );
