@@ -3,27 +3,43 @@ import Company from '../assets/icon-company.svg';
 import Website from '../assets/icon-website.svg';
 import Twitter from '../assets/icon-twitter.svg';
 
-export function Links() {
+interface dataLink {
+  location?: string;
+  company?: string;
+  github?: string;
+  twitterUsername?: string;
+}
+
+export function Links({
+  location,
+  company,
+  github,
+  twitterUsername,
+}: dataLink) {
+  console.log('location', location);
+
   return (
     <div className="text-secondary-font-grey dark:text-white">
-      <div className="flex gap-5 mt-6">
+      <div className="flex gap-6 mt-6">
         <img src={Location} alt="" />
-        <p>San Francisco</p>
+        <p>{location ? location : 'Not available'}</p>
       </div>
 
       <div className="flex gap-5  mt-4">
         <img src={Website} alt="" />
-        <a href="https://github.blog">https://github.blog</a>
+        <a href={github} className="block overflow-hidden text-ellipsis">
+          {github}
+        </a>
       </div>
 
       <div className="flex gap-5  mt-4">
         <img src={Twitter} alt="" />
-        <a href="">Not available</a>
+        <p>{twitterUsername ? twitterUsername : 'Not available'}</p>
       </div>
 
       <div className="flex gap-5  mt-4">
         <img src={Company} alt="" />
-        <p>@github</p>
+        <p>{company ? company : 'Not available'}</p>
       </div>
     </div>
   );
