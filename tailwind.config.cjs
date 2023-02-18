@@ -3,6 +3,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,css}'],
   theme: {
     extend: {
@@ -12,6 +13,7 @@ module.exports = {
         'primary-font-dark': '#222731',
         'secondary-font-grey': '#4B6A9B',
         'tertiary-blue': '#0079FF',
+        'back-dark-mode': '#1E2A47',
       },
       fontFamily: {
         'space-mono': ['Space Mono', ...defaultTheme.fontFamily.sans],

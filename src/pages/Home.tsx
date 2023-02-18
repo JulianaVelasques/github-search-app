@@ -1,4 +1,5 @@
 import { Header } from '../components/Header';
+import { ProfileCard } from '../components/ProfileCard';
 import { Search } from '../components/Search';
 
 export function Home() {
@@ -6,6 +7,7 @@ export function Home() {
     <div>
       <Header />
       <Search />
+      <ProfileCard />
     </div>
   );
 }
