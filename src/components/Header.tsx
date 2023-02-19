@@ -35,7 +35,7 @@ export function Header() {
         className="flex items-center gap-4 cursor-pointer"
         onClick={changeMode}
       >
-        <p className="text-[13px] font-bold tracking-[2.5px] text-secondary-font-grey dark:text-white ">
+        <p className="text-[13px] font-bold tracking-[2.5px] text-secondary-font-grey hover:text-primary-font-dark dark:text-white dark:hover:text-tertiary-font-grey ">
           {mode === 'dark' ? 'DARK' : 'LIGHT'}
         </p>
         <img

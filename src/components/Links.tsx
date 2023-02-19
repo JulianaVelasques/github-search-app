@@ -27,7 +27,10 @@ export function Links({
 
       <div className="flex gap-5  mt-4">
         <img src={Website} alt="" />
-        <a href={github} className="block overflow-hidden text-ellipsis">
+        <a
+          href={github}
+          className="block overflow-hidden text-ellipsis hover:underline"
+        >
           {github}
         </a>
       </div>
