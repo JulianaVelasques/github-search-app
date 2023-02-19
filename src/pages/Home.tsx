@@ -9,20 +9,22 @@ export function Home() {
   const [data, setData] = useState({});
 
   useEffect(() => {
+    getData('JulianaVelasques');
+  }, []);
+
+  const getData = (username: string | undefined) => {
     api
-      .get('/JulianaVelasques')
+      .get(`/${username}`)
       .then((response) => setData(response.data))
       .catch((err) => {
         console.error('ops! ocorreu um erro' + err);
       });
-  }, []);
-
-  console.log('daaata', data);
+  };
 
   return (
     <div>
       <Header />
-      <Search />
+      <Search getUsername={getData} />
       <ProfileCard data={data} />
     </div>
   );
