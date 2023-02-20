@@ -27,7 +27,7 @@ export function Home() {
   };
 
   return (
-    <div>
+    <div className="w-[327px] md:w-[573px] lg:w-[730px] mx-auto my-0 ">
       <Header />
       <Search getUsername={getData} status={status} />
       <ProfileCard data={data} />
