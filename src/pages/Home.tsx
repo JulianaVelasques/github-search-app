@@ -7,6 +7,7 @@ import api from '../service/api';
 
 export function Home() {
   const [data, setData] = useState({});
+  const [status, setStatus] = useState('');
 
   useEffect(() => {
     getData('JulianaVelasques');
@@ -15,16 +16,20 @@ export function Home() {
   const getData = (username: string | undefined) => {
     api
       .get(`/${username}`)
-      .then((response) => setData(response.data))
+      .then((response) => {
+        setStatus('');
+        setData(response.data);
+      })
       .catch((err) => {
         console.error('ops! ocorreu um erro' + err);
+        setStatus(err.response.data.message);
       });
   };
 
   return (
     <div>
       <Header />
-      <Search getUsername={getData} />
+      <Search getUsername={getData} status={status} />
       <ProfileCard data={data} />
     </div>
   );

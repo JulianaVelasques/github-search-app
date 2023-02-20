@@ -1,10 +1,12 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import SearchIcon from '../assets/icon-search.svg';
 
 export function Search({
   getUsername,
+  status,
 }: {
   getUsername: (name: string | undefined) => void;
+  status: string;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -13,8 +15,6 @@ export function Search({
     let inputValue = inputRef.current?.value;
 
     getUsername(inputValue);
-
-    inputRef.current!.value = '';
   };
 
   return (
@@ -28,6 +28,13 @@ export function Search({
         placeholder="Search GitHub username…"
         ref={inputRef}
       />
+
+      {status === 'Not Found' && (
+        <p className="absolute text-[10px] text-red-600 font-bold right-[9rem]">
+          {' '}
+          Not results{' '}
+        </p>
+      )}
 
       <button
         className="bg-tertiary-blue text-white rounded-xl px-5 py-3"
