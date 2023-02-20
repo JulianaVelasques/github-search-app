@@ -18,19 +18,20 @@ export function Search({
   };
 
   return (
-    <div className=" bg-white dark:bg-back-dark-mode flex justify-around items-center rounded-2xl py-2 pr-[0.2rem] pl-2 shadow-md mb-4">
-      <img src={SearchIcon} alt="seach icon" width={20} />
-
-      <input
-        className="w-[184px] focus:outline-none text-[13px] dark:bg-back-dark-mode dark:text-white"
-        type="text"
-        name="search"
-        placeholder="Search GitHub username…"
-        ref={inputRef}
-      />
+    <div className=" bg-white dark:bg-back-dark-mode flex justify-around md:justify-between items-center rounded-2xl py-2 pr-[0.2rem] pl-2 md:pl-8 md:pr-2 shadow-md mb-4">
+      <div className="flex gap-6 ">
+        <img src={SearchIcon} alt="seach icon" width={20} />
+        <input
+          className="w-[184px] md:w-[254px] focus:outline-none text-[13px] dark:bg-back-dark-mode dark:text-white"
+          type="text"
+          name="search"
+          placeholder="Search GitHub username…"
+          ref={inputRef}
+        />
+      </div>
 
       {status === 'Not Found' && (
-        <p className="absolute text-[10px] text-red-600 font-bold right-[9rem]">
+        <p className="absolute text-[10px] text-red-600 font-bold right-[9rem] md:right-[15rem]">
           {' '}
           Not results{' '}
         </p>

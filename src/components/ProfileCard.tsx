@@ -21,7 +21,7 @@ interface dataProfile {
 
 export function ProfileCard({ data }: dataProfile) {
   return (
-    <div className="bg-white dark:bg-back-dark-mode shadow-md rounded-2xl px-6 py-8 text-[13px]">
+    <div className="bg-white dark:bg-back-dark-mode shadow-md rounded-2xl px-6 py-8 md:px-10 md:py-10 text-[13px]">
       <div className="flex justify-start items-center gap-5 mb-8">
         <img src={data.avatar_url} alt="" width={70} className="rounded-full" />
 
