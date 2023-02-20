@@ -16,8 +16,8 @@ export function Links({
   console.log('location', location);
 
   return (
-    <div className="text-secondary-font-grey dark:text-white">
-      <div className="flex gap-6 mt-6">
+    <div className="md:grid md:grid-cols-2 md:gap-4  text-secondary-font-grey dark:text-white">
+      <div className="flex gap-6 mt-6 md:col-start-1 md:row-start-1">
         <Location
           className={
             location
@@ -30,7 +30,7 @@ export function Links({
         </p>
       </div>
 
-      <div className="flex gap-5  mt-4">
+      <div className="flex gap-5  mt-4 md:col-start-1 md:row-start-2 ">
         <Website className="fill-secondary-font-grey dark:fill-white" />
         <a
           href={github}
@@ -40,7 +40,7 @@ export function Links({
         </a>
       </div>
 
-      <div className="flex gap-5  mt-4">
+      <div className="flex items-center gap-5  mt-4 md:col-start-2 md:row-start-1">
         <Twitter
           className={
             twitterUsername
@@ -53,7 +53,7 @@ export function Links({
         </p>
       </div>
 
-      <div className="flex gap-5  mt-4">
+      <div className="flex gap-5  mt-4 md:col-start-2 md:row-start-2">
         <Company
           className={
             company
