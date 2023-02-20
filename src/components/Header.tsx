@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import Moon from '../assets/icon-moon.svg';
-import Sun from '../assets/icon-sun.svg';
+
+import { Moon, Sun } from './Icons';
 
 export function Header() {
   const [mode, setMode] = useState('');
@@ -32,16 +32,13 @@ export function Header() {
       </h1>
 
       <div
-        className="flex items-center gap-4 cursor-pointer"
+        className="flex items-center gap-4 cursor-pointer  text-secondary-font-grey dark:text-white  hover:text-primary-font-dark  dark:hover:text-tertiary-font-grey fill-secondary-font-grey  hover:fill-primary-font-dark dark:fill-white dark:hover:fill-tertiary-font-grey"
         onClick={changeMode}
       >
-        <p className="text-[13px] font-bold tracking-[2.5px] text-secondary-font-grey hover:text-primary-font-dark dark:text-white dark:hover:text-tertiary-font-grey ">
+        <p className="text-[13px] font-bold tracking-[2.5px] ">
           {mode === 'dark' ? 'DARK' : 'LIGHT'}
         </p>
-        <img
-          src={mode === 'dark' ? Moon : Sun}
-          alt={mode === 'dark' ? 'Turn on dark mode' : 'Turn off dark mode'}
-        />
+        {mode === 'dark' ? <Moon /> : <Sun />}
       </div>
     </header>
   );

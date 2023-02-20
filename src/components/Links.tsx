@@ -1,7 +1,4 @@
-import Location from '../assets/icon-location.svg';
-import Company from '../assets/icon-company.svg';
-import Website from '../assets/icon-website.svg';
-import Twitter from '../assets/icon-twitter.svg';
+import { Location, Company, Website, Twitter } from './Icons';
 
 interface dataLink {
   location?: string;
@@ -21,12 +18,20 @@ export function Links({
   return (
     <div className="text-secondary-font-grey dark:text-white">
       <div className="flex gap-6 mt-6">
-        <img src={Location} alt="" />
-        <p>{location ? location : 'Not available'}</p>
+        <Location
+          className={
+            location
+              ? 'fill-secondary-font-grey dark:fill-white'
+              : 'fill-slate-400'
+          }
+        />
+        <p className={!location ? 'text-slate-400' : ''}>
+          {location ? location : 'Not available'}
+        </p>
       </div>
 
       <div className="flex gap-5  mt-4">
-        <img src={Website} alt="" />
+        <Website className="fill-secondary-font-grey dark:fill-white" />
         <a
           href={github}
           className="block overflow-hidden text-ellipsis hover:underline"
@@ -36,13 +41,29 @@ export function Links({
       </div>
 
       <div className="flex gap-5  mt-4">
-        <img src={Twitter} alt="" />
-        <p>{twitterUsername ? twitterUsername : 'Not available'}</p>
+        <Twitter
+          className={
+            twitterUsername
+              ? 'fill-secondary-font-grey dark:fill-white'
+              : 'fill-slate-400'
+          }
+        />
+        <p className={!twitterUsername ? 'text-slate-400' : ''}>
+          {twitterUsername ? twitterUsername : 'Not available'}
+        </p>
       </div>
 
       <div className="flex gap-5  mt-4">
-        <img src={Company} alt="" />
-        <p>{company ? company : 'Not available'}</p>
+        <Company
+          className={
+            company
+              ? 'fill-secondary-font-grey dark:fill-white'
+              : 'fill-slate-400'
+          }
+        />
+        <p className={!company ? 'text-slate-400' : ''}>
+          {company ? company : 'Not available'}
+        </p>
       </div>
     </div>
   );
