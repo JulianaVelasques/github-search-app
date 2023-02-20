@@ -52,7 +52,7 @@ Create personal project to implement the stacks that I'm currently learning.
 ### Links
 
 - Solution URL: [Here](https://github.com/JulianaVelasques/github-search-app)
-- Live Site URL: [Here](https://advice-generator-pi-one.vercel.app/)
+- Live Site URL: [Here](https://github-search-app-julianavelasques.vercel.app/)
 
 
 ## :wrench: Built With
